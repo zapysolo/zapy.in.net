@@ -31,6 +31,7 @@
 					<button
 						class="md:hidden text-[#607B96] hover:text-[#4fd1c5] focus:outline-none"
 						aria-label="Toggle menu"
+						onclick="toggleNav()"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +48,33 @@
 							></path>
 						</svg>
 					</button>
+
+					<nav
+						class="md:flex hidden absolute z-100 top-[60px] left-0 right-0 flex flex-col bg-[#011627] border-b border-[#1E2D3D] shadow-lg animate-fadeIn md:relative md:top-0 md:border-none md:shadow-none md:animate-none"
+					>
+						<button
+							onclick="showSection('home')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left text-[#4fd1c5] border-[#4fd1c5] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_hello</button
+						><button
+							onclick="showSection('about')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_about-me</button
+						><button
+							onclick="showSection('projects')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_projects</button
+						><button
+							onclick="showSection('contact_me')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_contact-me
+						</button>
+					</nav>
+
 					<nav
 						class="md:flex hidden md:relative md:top-0 md:border-none md:shadow-none md:animate-none"
 					>
@@ -1211,6 +1239,17 @@
 		<next-route-announcer style="position: absolute"></next-route-announcer>
 	</body>
 	<script>
+		function toggleNav() {
+			const el = document.querySelector("nav");
+			if (el) {
+				if (el.classList.contains("hidden")) {
+					el.classList.remove("hidden");
+				} else {
+					el.classList.add("hidden");
+				}
+			}
+		}
+
 		function showSection(id) {
 			const sections = [
 				"home_body",
@@ -1255,6 +1294,11 @@
 				headerTarget.classList.remove("border-transparent");
 				headerTarget.classList.add("border-[#4fd1c5]");
 				headerTarget.classList.add("text-[#4fd1c5]");
+			}
+
+      const el = document.querySelector("nav");
+			if (el && !el.classList.contains("hidden")) {
+				el.classList.add("hidden");
 			}
 		}
 	</script>
