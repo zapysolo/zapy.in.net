@@ -19,6 +19,15 @@
 		<meta name="description" content="Software Engineer | Backend Developer" />
 		<meta name="next-size-adjust" />
 	</head>
+   <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0XZ733XMQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B0XZ733XMQ');
+  </script>
 	<body class="__className_d65c78 bg-vscode-bg text-vscode-text">
 		<div class="min-h-screen bg-[#011627] text-[#607B96] flex flex-col">
 			<header
@@ -225,7 +234,8 @@
 												=<!-- -->
 												<a
 													href="tel:+917774072857"
-													class="text-[#C3E88D] hover:underline"
+													class="text-[#C3E88D] hover:underline track-click"
+													data-name="mobile-number-click"
 													>"+91 7774072857"</a
 												>;
 											</div>
@@ -237,11 +247,12 @@
 												<span class="text-[#82AAFF]">email</span> =<!-- -->
 												<span class="text-[#C3E88D]"
 													><a
-														href="mailto:nickpt98@zohomail.in"
+														href="mailto:nikhil.patil.work@zohomail.in"
 														target="_blank"
 														rel="noopener noreferrer"
-														class="hover:underline"
-														>"nickpt98@zohomail.in"</a
+														class="hover:underline track-click"
+                            data-name="email-click"
+														>"nikhil.patil.work@zohomail.in"</a
 													></span
 												>;
 											</div>
@@ -258,7 +269,8 @@
 														href="https://github.com/ZapySolo"
 														target="_blank"
 														rel="noopener noreferrer"
-														class="hover:underline"
+														class="hover:underline track-click"
+                            data-name="github-link-click"
 														>"https://github.com/ZapySolo"</a
 													></span
 												>;
@@ -277,7 +289,8 @@
 														href="https://www.linkedin.com/in/zapy"
 														target="_blank"
 														rel="noopener noreferrer"
-														class="hover:underline"
+														class="hover:underline track-click"
+                            data-name="linkedin-link-click"
 														>"https://www.linkedin.com/in/zapy"</a
 													></span
 												>;
@@ -1189,7 +1202,7 @@
 										<div class="ml-2 sm:ml-4">
 											<span class="text-[#C792EA]">email:</span>
 											<span class="text-[#C3E88D] break-all"
-												>"nickpt98@zohomail.in"</span
+												>"nikhil.patil.work@zohomail.in"</span
 											>,
 										</div>
 										<div class="ml-2 sm:ml-4">
@@ -1301,5 +1314,15 @@
 				el.classList.add("hidden");
 			}
 		}
+
+    document.querySelectorAll(".track-click").forEach((el) => {
+      el.addEventListener("click", function () {
+        gtag("event", "div_click", {
+          event_category: "interaction",
+          event_label: el.dataset.name
+        });
+      });
+    });
+
 	</script>
 </html>
