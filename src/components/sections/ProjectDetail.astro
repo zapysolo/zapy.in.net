@@ -1,0 +1,42 @@
+---
+import TechBadge from '@/components/common/TechBadge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  live?: string;
+}
+
+const { title, description, tech, github, live } = Astro.props;
+---
+
+<div class="mb-10">
+  <div class="flex flex-wrap gap-2 mb-6">
+    {tech.map((t) => <TechBadge name={t} />)}
+  </div>
+
+  <div class="flex flex-wrap gap-3 mb-8">
+    <a
+      href={github}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-vs-bg-hover text-vs-accent px-4 py-2 rounded-md hover:bg-[#233141] transition-colors font-mono text-sm focus:outline-none focus:ring-2 focus:ring-vs-accent"
+    >
+      view-on-github
+    </a>
+    {
+      live && (
+        <a
+          href={live}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-vs-accent text-vs-bg px-4 py-2 rounded-md hover:opacity-90 transition-opacity font-mono text-sm focus:outline-none focus:ring-2 focus:ring-vs-accent"
+        >
+          live-demo
+        </a>
+      )
+    }
+  </div>
+</div>

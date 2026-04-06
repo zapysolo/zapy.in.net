@@ -1,0 +1,20 @@
+---
+interface Props {
+  label: string;
+  url: string;
+  trackingName?: string;
+  class?: string;
+}
+
+const { label, url, trackingName, class: className } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={['hover:text-vs-accent transition-colors duration-200', className]}
+  data-track={trackingName}
+>
+  {label}
+</a>

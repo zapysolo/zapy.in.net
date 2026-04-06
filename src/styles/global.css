@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-vs-bg: #011627;
+    --color-vs-bg-secondary: #1a1a1a;
+    --color-vs-bg-card: #272727;
+    --color-vs-bg-card-hover: #333333;
+    --color-vs-bg-hover: #1e2d3d;
+    --color-vs-border: #1e2d3d;
+    --color-vs-text: #607b96;
+    --color-vs-accent: #4fd1c5;
+    --color-vs-purple: #c792ea;
+    --color-vs-blue: #82aaff;
+    --color-vs-green: #c3e88d;
+    --color-vs-orange: #e99287;
+    --color-vs-teal: #76c7c0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-vs-bg text-vs-text font-sans;
+  }
+}
+
+@layer components {
+  .prose-vs {
+    @apply text-vs-text leading-relaxed;
+  }
+
+  .prose-vs h2 {
+    @apply text-white text-2xl font-mono mt-8 mb-4;
+  }
+
+  .prose-vs h3 {
+    @apply text-vs-accent text-xl font-mono mt-6 mb-3;
+  }
+
+  .prose-vs p {
+    @apply mb-4;
+  }
+
+  .prose-vs a {
+    @apply text-vs-accent hover:underline;
+  }
+
+  .prose-vs code {
+    @apply font-mono text-vs-green bg-vs-bg-card px-1.5 py-0.5 rounded text-sm;
+  }
+
+  .prose-vs pre {
+    @apply bg-vs-bg-card rounded-lg p-4 overflow-x-auto mb-4;
+  }
+
+  .prose-vs pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose-vs ul {
+    @apply list-disc list-inside mb-4 space-y-1;
+  }
+
+  .prose-vs ol {
+    @apply list-decimal list-inside mb-4 space-y-1;
+  }
+
+  .prose-vs blockquote {
+    @apply border-l-4 border-vs-accent pl-4 italic text-vs-text my-4;
+  }
+}

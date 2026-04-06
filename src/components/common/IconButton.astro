@@ -1,0 +1,20 @@
+---
+interface Props {
+  label: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const { label, type = 'button', class: className } = Astro.props;
+---
+
+<button
+  type={type}
+  aria-label={label}
+  class:list={[
+    'hover:text-vs-accent transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-vs-accent rounded',
+    className,
+  ]}
+>
+  <slot />
+</button>
