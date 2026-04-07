@@ -1,0 +1,81 @@
+---
+import { OWNER_EMAIL, OWNER_PHONE } from '@/constants';
+---
+
+<section
+  id="home"
+  class="flex-1 px-4 md:px-8 lg:px-12 py-16 md:py-24 min-h-[calc(100vh-60px)]"
+  aria-labelledby="hero-heading"
+>
+  <div class="max-w-4xl">
+    <p class="text-gray-400 mb-2 font-mono text-sm">Hi all. I am</p>
+
+    <h1 id="hero-heading" class="text-3xl md:text-5xl font-mono text-white mb-4">
+      Nikhil Patil
+    </h1>
+
+    <p class="text-vs-accent text-lg md:text-xl mb-10 font-mono">
+      &gt; Software Engineer
+    </p>
+
+    <div class="space-y-5 font-mono text-sm md:text-base">
+      <div>
+        <p class="text-gray-500 text-sm">// my number</p>
+        <p>
+          <span class="text-vs-purple">const</span>{' '}
+          <span class="text-vs-blue">telephoneNum</span> ={' '}
+          <a
+            href={`tel:${OWNER_PHONE.replace(/\s/g, '')}`}
+            class="text-vs-green hover:underline"
+            data-track="mobile-number-click"
+          >"{OWNER_PHONE}"</a>;
+        </p>
+      </div>
+
+      <div>
+        <p class="text-gray-500 text-sm">// my e-mail</p>
+        <p class="break-all">
+          <span class="text-vs-purple">const</span>{' '}
+          <span class="text-vs-blue">email</span> ={' '}
+          <a
+            href={`mailto:${OWNER_EMAIL}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-vs-green hover:underline"
+            data-track="email-click"
+          >"{OWNER_EMAIL}"</a>;
+        </p>
+      </div>
+
+      <div>
+        <p class="text-gray-500 text-sm">// you can also see it on my Github page</p>
+        <p class="break-all">
+          <span class="text-vs-purple">const</span>{' '}
+          <span class="text-vs-blue">githubLink</span> ={' '}
+          <a
+            href="https://github.com/ZapySolo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-vs-green hover:underline"
+            data-track="github-link-click"
+          >"https://github.com/ZapySolo"</a>;
+        </p>
+      </div>
+
+      <div>
+        <p class="text-gray-500 text-sm">// you can also see it on my LinkedIn page</p>
+        <p class="break-all">
+          <span class="text-vs-purple">const</span>{' '}
+          <span class="text-vs-blue">linkedinLink</span> ={' '}
+          <a
+            href="https://www.linkedin.com/in/zapy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-vs-green hover:underline"
+            data-track="linkedin-link-click"
+          >"https://www.linkedin.com/in/zapy"</a>;
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

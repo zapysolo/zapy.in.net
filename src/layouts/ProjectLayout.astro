@@ -1,0 +1,77 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+import TechBadge from '@/components/common/TechBadge.astro';
+import { SITE_TITLE } from '@/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  live?: string;
+  ogImage?: string;
+}
+
+const { title, description, tech, github, live, ogImage } = Astro.props;
+const pageTitle = `${title} | ${SITE_TITLE}`;
+const canonicalUrl = Astro.url.href;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={description}
+  ogImage={ogImage}
+  canonicalUrl={canonicalUrl}
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 py-12 mt-[60px]">
+    <article>
+      <header class="mb-10">
+        <h1 class="text-3xl md:text-4xl font-mono text-white mb-3">{title}</h1>
+        <p class="text-vs-text mb-6">{description}</p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          {tech.map((t) => <TechBadge name={t} />)}
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-vs-bg-hover text-vs-accent px-4 py-2 rounded-md hover:bg-[#233141] transition-colors font-mono text-sm focus:outline-none focus:ring-2 focus:ring-vs-accent"
+          >
+            view-on-github
+          </a>
+          {
+            live && (
+              <a
+                href={live}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-vs-accent text-vs-bg px-4 py-2 rounded-md hover:opacity-90 transition-opacity font-mono text-sm focus:outline-none focus:ring-2 focus:ring-vs-accent"
+              >
+                live-demo
+              </a>
+            )
+          }
+        </div>
+      </header>
+
+      <div class="prose-vs">
+        <slot />
+      </div>
+    </article>
+
+    <footer class="mt-12 pt-6 border-t border-vs-border">
+      <a href="/#projects" class="text-vs-accent hover:underline font-mono text-sm">
+        &larr; back to projects
+      </a>
+    </footer>
+  </main>
+
+  <Footer />
+</BaseLayout>

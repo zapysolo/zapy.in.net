@@ -1,0 +1,128 @@
+---
+import { NAV_ITEMS, OWNER_HANDLE } from '@/constants';
+
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/';
+---
+
+<header class="bg-vs-bg border-b border-vs-border fixed w-full top-0 z-50">
+  <div class="flex items-center justify-between h-[60px] px-4 max-w-7xl mx-auto">
+    <a href="/" class="text-vs-accent text-lg sm:text-xl font-mono">
+      {OWNER_HANDLE}
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      class="md:hidden text-vs-text hover:text-vs-accent focus:outline-none focus:ring-2 focus:ring-vs-accent rounded"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Main navigation" class="hidden md:flex">
+      {
+        NAV_ITEMS.map((item) => (
+          <a
+            href={item.href}
+            data-section={item.section}
+            class:list={[
+              'nav-link px-6 py-4 border-b-2 transition-all duration-200 hover:text-vs-accent font-mono text-sm',
+              !isHome && currentPath.startsWith('/blog') && item.section === 'blog'
+                ? 'text-vs-accent border-vs-accent'
+                : isHome && item.section === 'home'
+                  ? 'text-vs-accent border-vs-accent'
+                  : 'text-vs-text border-transparent hover:bg-vs-bg-hover',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav
+    id="mobile-nav"
+    aria-label="Mobile navigation"
+    class="hidden md:hidden bg-vs-bg border-b border-vs-border shadow-lg"
+  >
+    {
+      NAV_ITEMS.map((item) => (
+        <a
+          href={item.href}
+          data-section={item.section}
+          class="mobile-nav-link block px-6 py-4 hover:text-vs-accent hover:bg-vs-bg-hover transition-all duration-200 text-vs-text font-mono text-sm"
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = !mobileNav?.classList.contains('hidden');
+    mobileNav?.classList.toggle('hidden');
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.add('hidden');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Highlight active nav item based on visible section (home page only)
+  if (window.location.pathname === '/') {
+    const navLinks = document.querySelectorAll<HTMLElement>('.nav-link[data-section]');
+
+    const setActiveLink = (sectionId: string) => {
+      navLinks.forEach((link) => {
+        const isActive = link.dataset.section === sectionId;
+        link.classList.toggle('text-vs-accent', isActive);
+        link.classList.toggle('border-vs-accent', isActive);
+        link.classList.toggle('text-vs-text', !isActive);
+        link.classList.toggle('border-transparent', !isActive);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+  }
+</script>

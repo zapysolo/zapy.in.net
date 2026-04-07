@@ -1,0 +1,1328 @@
+<html lang="en">
+	<head>
+		<style>
+			body {
+				transition: opacity ease-in 0.2s;
+			}
+			body[unresolved] {
+				opacity: 0;
+				display: block;
+				overflow: hidden;
+				position: relative;
+			}
+		</style>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="style.css" data-precedence="next" />
+
+		<title>Nikhil Patil - Software Engineer</title>
+		<meta name="description" content="Software Engineer | Backend Developer" />
+		<meta name="next-size-adjust" />
+	</head>
+   <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0XZ733XMQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B0XZ733XMQ');
+  </script>
+	<body class="__className_d65c78 bg-vscode-bg text-vscode-text">
+		<div class="min-h-screen bg-[#011627] text-[#607B96] flex flex-col">
+			<header
+				class="bg-[#011627] border-b border-[#1E2D3D] fixed w-full top-0 z-50"
+			>
+				<div
+					class="flex items-center justify-between h-[60px] px-4 max-w-7xl mx-auto"
+				>
+					<div class="text-[#4fd1c5] text-lg sm:text-xl">nikhil-patil</div>
+					<button
+						class="md:hidden text-[#607B96] hover:text-[#4fd1c5] focus:outline-none"
+						aria-label="Toggle menu"
+						onclick="toggleNav()"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-6 w-6"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16"
+							></path>
+						</svg>
+					</button>
+
+					<nav
+						class="md:flex hidden md:hidden absolute z-100 top-[60px] left-0 right-0 flex flex-col bg-[#011627] border-b border-[#1E2D3D] shadow-lg animate-fadeIn md:relative md:top-0 md:border-none md:shadow-none md:animate-none"
+					>
+						<button
+							onclick="showSection('home')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left text-[#4fd1c5] border-[#4fd1c5] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_hello</button
+						><button
+							onclick="showSection('about')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_about-me</button
+						><button
+							onclick="showSection('projects')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_projects</button
+						><button
+							onclick="showSection('contact_me')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_contact-me
+						</button>
+					</nav>
+
+					<nav
+						class="md:flex hidden md:relative md:top-0 md:border-none md:shadow-none md:animate-none"
+					>
+						<button
+							id="home_header"
+							onclick="showSection('home')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left text-[#4fd1c5] border-[#4fd1c5] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_hello</button
+						><button
+							id="about_header"
+							onclick="showSection('about')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_about-me</button
+						><button
+							id="projects_header"
+							onclick="showSection('projects')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_projects</button
+						><button
+							id="contact_me_header"
+							onclick="showSection('contact_me')"
+							class="px-6 py-4 hover:text-[#4fd1c5] border-b-2 transition-colors w-full md:w-auto text-left border-transparent text-[#607B96] hover:bg-[#1E2D3D] md:hover:bg-transparent transition-all duration-200"
+						>
+							_contact-me
+						</button>
+					</nav>
+				</div>
+			</header>
+			<div class="flex flex-col md:flex-row flex-1 mt-[64px]">
+				<div
+					class="hidden md:block w-full md:w-auto border-b md:border-b-0 border-[#1E2D3D]"
+				>
+					<div
+						class="w-64 md:w-72 lg:w-80 bg-[#011627] border-r border-[#1E2D3D] overflow-y-auto"
+					>
+						<div class="p-4">
+							<div>
+								<button
+									class="flex items-center w-full text-left hover:text-[#4fd1c5] p-2 rounded transition-colors"
+								>
+									<svg
+										stroke="currentColor"
+										fill="currentColor"
+										stroke-width="0"
+										viewBox="0 0 448 512"
+										class="mr-2"
+										height="1em"
+										width="1em"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+										></path></svg
+									><span>projects</span>
+								</button>
+								<div class="ml-4 mt-2 space-y-2">
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a
+											href="https://github.com/nikpatil2123/product-inventory-api"
+											><span class="mr-2">📁</span><span>Fefifo</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a href="https://github.com/nikpatil2123/MERN-CRUD"
+											><span class="mr-2">📁</span><span>Sportsbuzz</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a
+											href="https://github.com/nikpatil2123/gmail-whatsapp-notifier"
+											><span class="mr-2">📁</span><span>Goldman City</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a href="https://github.com/nikpatil2123/Nike_CLone"
+											><span class="mr-2">📁</span><span>Protopak</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a href="https://github.com/nikpatil2123/Spin-wheel-Game"
+											><span class="mr-2">📁</span
+											><span>College Project 1</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a href="https://github.com/nikpatil2123/Hackathon"
+											><span class="mr-2">📁</span
+											><span>College Project 2</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a href="https://github.com/nikpatil2123/Hackathon"
+											><span class="mr-2">📁</span
+											><span>Office Automation</span></a
+										>
+									</div>
+									<div
+										class="flex items-center p-2 rounded hover:text-[#4fd1c5] transition-colors cursor-pointer"
+									>
+										<a href="https://github.com/nikpatil2123/Hackathon"
+											><span class="mr-2">📁</span
+											><span>Telegram/Whatsapp bot</span></a
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="home_body" class="flex-1 overflow-auto">
+					<div
+						class="flex-1 overflow-auto w-full h-full md:h-auto px-4 md:px-6 lg:px-8"
+					>
+						<div class="max-w-7xl mx-auto">
+							<div class="p-4 md:p-8 bg-[#011627] min-h-full">
+								<div class="max-w-4xl mx-auto">
+									<div class="text-gray-400 mb-2">Hi all. I am</div>
+									<h1 class="text-3xl md:text-5xl font-mono text-white mb-4">
+										Nikhil Patil
+									</h1>
+									<div class="text-[#4fd1c5] text-lg md:text-xl mb-8">
+										&gt; Software Engineer
+									</div>
+									<div class="space-y-4 font-mono text-sm md:text-base">
+										<div>
+											<div class="text-gray-500">// my number</div>
+											<div class="break-words">
+												<span class="text-[#C792EA]">const</span>
+												<span class="text-[#82AAFF]">telephoneNum</span>
+												=<!-- -->
+												<a
+													href="tel:+917774072857"
+													class="text-[#C3E88D] hover:underline track-click"
+													data-name="mobile-number-click"
+													>"+91 7774072857"</a
+												>;
+											</div>
+										</div>
+										<div>
+											<div class="text-gray-500">// my e-mail</div>
+											<div class="break-words">
+												<span class="text-[#C792EA]">const</span>
+												<span class="text-[#82AAFF]">email</span> =<!-- -->
+												<span class="text-[#C3E88D]"
+													><a
+														href="mailto:nikhil.patil.work@zohomail.in"
+														target="_blank"
+														rel="noopener noreferrer"
+														class="hover:underline track-click"
+                            data-name="email-click"
+														>"nikhil.patil.work@zohomail.in"</a
+													></span
+												>;
+											</div>
+										</div>
+										<div>
+											<div class="text-gray-500">
+												// you can also see it on my Github page
+											</div>
+											<div class="break-words">
+												<span class="text-[#C792EA]">const</span>
+												<span class="text-[#82AAFF]">githubLink</span> =<!-- -->
+												<span class="text-[#C3E88D]"
+													><a
+														href="https://github.com/ZapySolo"
+														target="_blank"
+														rel="noopener noreferrer"
+														class="hover:underline track-click"
+                            data-name="github-link-click"
+														>"https://github.com/ZapySolo"</a
+													></span
+												>;
+											</div>
+										</div>
+										<div>
+											<div class="text-gray-500">
+												// you can also see it on my Linkedin page
+											</div>
+											<div class="break-words">
+												<span class="text-[#C792EA]">const</span>
+												<span class="text-[#82AAFF]">linkedinLink</span>
+												=<!-- -->
+												<span class="text-[#C3E88D]"
+													><a
+														href="https://www.linkedin.com/in/zapy"
+														target="_blank"
+														rel="noopener noreferrer"
+														class="hover:underline track-click"
+                            data-name="linkedin-link-click"
+														>"https://www.linkedin.com/in/zapy"</a
+													></span
+												>;
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="about_body" class="flex-1 overflow-auto hidden bg-[#1a1a1a]">
+					<div
+						class="flex-1 overflow-auto w-full h-full md:h-auto px-4 md:px-6 lg:px-8"
+					>
+						<div class="max-w-7xl mx-auto">
+							<div class="min-h-screen bg-[#1a1a1a] p-3 sm:p-8">
+								<div
+									class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-3 sm:gap-8"
+								>
+									<div
+										class="bg-[#272727] rounded-lg shadow-xl overflow-hidden"
+									>
+										<div class="bg-[#333333] p-2 flex items-center">
+											<div class="flex space-x-2">
+												<div class="w-3 h-3 rounded-full bg-red-500"></div>
+												<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+												<div class="w-3 h-3 rounded-full bg-green-500"></div>
+											</div>
+											<span class="ml-4 text-gray-400 text-sm"
+												>AboutMe.tsx</span
+											>
+										</div>
+										<div class="p-4 sm:p-6 font-mono text-xs sm:text-sm">
+											<div class="grid gap-1 w-full">
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>1</span
+													>
+													<div class="flex-1 min-w-0">
+														<span class="text-gray-400">/**</span>
+													</div>
+												</div>
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>2</span
+													>
+													<div class="flex-1 min-w-0">
+														<div class="flex items-baseline">
+															<span class="text-[#76c7c0]">* </span
+															><span
+																class="scroll-m-20 text-xl sm:text-3xl font-semibold tracking-tight"
+															>
+																About Nikhil Patil</span
+															>
+														</div>
+													</div>
+												</div>
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>3</span
+													>
+													<div class="flex-1 min-w-0">
+														<span
+															class="text-[#76c7c0] break-words whitespace-pre-wrap"
+															>* Welcome to my portfolio!</span
+														>
+													</div>
+												</div>
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>4</span
+													>
+													<div class="flex-1 min-w-0">
+														<span class="text-gray-400">* </span>
+													</div>
+												</div>
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>5</span
+													>
+													<div class="flex-1 min-w-0 flex-row">
+														<span
+															class="text-[#76c7c0] break-words whitespace-pre-wrap"
+															>* Batchelors in Engineering
+															<span class="text-[#A9D6E5] font-bold"
+																>CS</span
+															></span
+														>
+													</div>
+												</div>
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>6</span
+													>
+													<div class="flex-1 min-w-0">
+														<span
+															class="text-[#76c7c0] break-words whitespace-pre-wrap"
+															>* Currently pursuing
+															<span class="text-[#A9D6E5] font-bold"
+																>Masters in AI</span
+															></span
+														>
+													</div>
+												</div>
+												<div
+													class="flex group hover:bg-[#333333] transition-colors duration-150"
+												>
+													<span
+														class="flex-shrink-0 w-8 text-gray-500 opacity-50"
+														>7</span
+													>
+													<div class="flex-1 min-w-0">
+														<span class="text-gray-400">*/</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="space-y-3 sm:space-y-8">
+										<div class="bg-[#272727] p-3 sm:p-6 rounded-lg shadow-xl">
+											<div
+												class="text-gray-400 mb-3 sm:mb-6 text-xs sm:text-sm font-mono border-b border-gray-700 pb-2"
+											>
+												// Programming languages &amp; frameworks
+											</div>
+											<div
+												class="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-4"
+											>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>NEXT.JS</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>REACT JS</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>React Native</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>JavaScript/Typescript</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-gray-600 min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Flutter</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-gray-600 min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Express</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Tailwind/Bootstrap/Antd</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>AWS</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Git</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Digital Ocean</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>SQL</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>NO SQL</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Offile First Architecture</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Scaling/ Testing</span
+													>
+												</div>
+											</div>
+										</div>
+										<div class="bg-[#272727] p-3 sm:p-6 rounded-lg shadow-xl">
+											<div
+												class="text-gray-400 mb-3 sm:mb-6 text-xs sm:text-sm font-mono border-b border-gray-700 pb-2"
+											>
+												// Tools &amp; Operating Systems
+											</div>
+											<div
+												class="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3"
+											>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Windows</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Mac OS</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Linux</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Postman</span
+													>
+												</div>
+												<div
+													class="flex items-center p-1.5 sm:p-2 hover:bg-[#333333] rounded transition-colors duration-200"
+												>
+													<svg
+														stroke="currentColor"
+														fill="currentColor"
+														stroke-width="0"
+														viewBox="0 0 448 512"
+														class="text-[#76c7c0] min-w-[16px] sm:min-w-[20px] mr-2"
+														height="1em"
+														width="1em"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"
+														></path></svg
+													><span
+														class="text-gray-200 text-xs sm:text-sm break-words"
+														>Figma</span
+													>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="projects_body" class="flex-1 overflow-auto hidden">
+					<div
+						class="flex-1 overflow-auto w-full h-full md:h-auto px-4 md:px-6 lg:px-8"
+					>
+						<div class="max-w-7xl mx-auto">
+							<div class="container mx-auto px-4 py-8 relative z-[-1.5px]">
+								<div
+									class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+								>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 1</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// Fefifo</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="Fefifo"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="a.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												Full Stack Agro project.
+											</p>
+											<a
+												href="/"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 2</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// Sportsbuzz</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="Sportsbuzz"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="a.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												Live Sports Entertainment News/Score
+											</p>
+											<a
+												href="/"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 3</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// Goldman City</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="Protopak"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="a.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												Protopak.
+											</p>
+											<a
+												href="https://github.com/nikpatil2123/gmail-whatsapp-notifier"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 4</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// College Project 1</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="College Project 1"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="a.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												College Project 1
+											</p>
+											<a
+												href=""
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 5</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// College Project 2</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="College Project 2"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="/_next/static/media/spin.52ffde50.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												College Project 2.
+											</p>
+											<a
+												href="/"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 6</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// Office Automation</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="Office Automation"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="a.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												Office Automation
+											</p>
+											<a
+												href="/"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+									<div
+										class="bg-[#011627] rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+									>
+										<div class="p-4 sm:p-6">
+											<div class="mb-4 flex items-center">
+												<span
+													class="text-[#e99287] text-sm sm:text-base font-semibold"
+													>Project 7</span
+												><span class="text-gray-500 ml-2 text-sm sm:text-base"
+													>// Telegram/Whatsapp bot</span
+												>
+											</div>
+											<div class="mb-4 relative aspect-video z-0">
+												<img
+													alt="Secure Chat App"
+													fetchpriority="high"
+													decoding="async"
+													data-nimg="fill"
+													class="rounded-md"
+													src="a.png"
+													style="
+														position: absolute;
+														height: 100%;
+														width: 100%;
+														inset: 0px;
+														object-fit: cover;
+														color: transparent;
+													"
+												/>
+											</div>
+											<p
+												class="text-gray-300 mb-6 text-sm sm:text-base min-h-[3rem]"
+											>
+												Telegram/Whatsapp bot
+											</p>
+											<a
+												href="/"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="inline-block w-full text-center bg-[#1a2634] text-[#4fd1c5] px-4 py-2 text-sm sm:text-base rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#4fd1c5] focus:ring-opacity-50"
+												>view-project-on-github</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="contact_me_body" class="flex-1 overflow-auto hidden">
+					<div
+						class="flex-1 overflow-auto w-full h-full md:h-auto px-4 md:px-6 lg:px-8"
+					>
+						<div class="max-w-7xl mx-auto">
+							<div class="p-4 sm:p-8">
+								<div
+									class="max-w-2xl mx-auto bg-[#011627] p-4 sm:p-6 rounded-lg font-mono text-sm sm:text-base"
+								>
+									<div class="grid gap-1">
+										<div class="text-gray-400">/**</div>
+										<div class="text-gray-400">* Contact Information</div>
+										<div class="text-[#4fd1c5]">* Let's work together!</div>
+										<div class="text-gray-400">*/</div>
+										<div class="mt-4 sm:mt-6">
+											<span class="text-[#C792EA]">const</span>
+											<span class="text-[#82AAFF]">contactInfo</span> = {
+										</div>
+										<div class="ml-2 sm:ml-4">
+											<span class="text-[#C792EA]">email:</span>
+											<span class="text-[#C3E88D] break-all"
+												>"nikhil.patil.work@zohomail.in"</span
+											>,
+										</div>
+										<div class="ml-2 sm:ml-4">
+											<span class="text-[#C792EA]">phone:</span>
+											<span class="text-[#C3E88D]">"+91 7774072857"</span>,
+										</div>
+										<div class="ml-2 sm:ml-4">
+											<span class="text-[#C792EA]">location:</span>
+											<span class="text-[#C3E88D]">"Navi Mumbai, India"</span>,
+										</div>
+										<div>};</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="bg-[#011627] border-t border-[#1E2D3D] p-4">
+				<div
+					class="flex flex-col sm:flex-row justify-between items-center max-w-screen-xl mx-auto space-y-4 sm:space-y-0"
+				>
+					<div
+						class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4"
+					>
+						<span class="text-sm sm:text-base">Find me in:</span>
+						<div class="flex space-x-4">
+							<a
+								href="https://github.com/ZapySolo"
+								class="hover:text-[#4fd1c5] transition-colors duration-200 text-sm sm:text-base"
+								>Github</a
+							><a
+								href="https://www.linkedin.com/in/zapy/"
+								class="hover:text-[#4fd1c5] transition-colors duration-200 text-sm sm:text-base"
+								>Linked In</a
+							>
+						</div>
+					</div>
+					<a
+						href="https://www.linkedin.com/in/zapy"
+						class="flex items-center hover:text-[#4fd1c5] transition-colors duration-200 text-sm sm:text-base"
+						>@nikhilpatil</a
+					>
+				</div>
+			</footer>
+		</div>
+		<next-route-announcer style="position: absolute"></next-route-announcer>
+	</body>
+	<script>
+		function toggleNav() {
+			const el = document.querySelector("nav");
+			if (el) {
+				if (el.classList.contains("hidden")) {
+					el.classList.remove("hidden");
+				} else {
+					el.classList.add("hidden");
+				}
+			}
+		}
+
+		function showSection(id) {
+			const sections = [
+				"home_body",
+				"about_body",
+				"projects_body",
+				"contact_me_body",
+			];
+
+			const headers = [
+				"home_header",
+				"about_header",
+				"projects_header",
+				"contact_me_header",
+			];
+
+			// Hide all sections
+			sections.forEach((sectionId) => {
+				const el = document.getElementById(sectionId);
+				if (el) el.classList.add("hidden");
+			});
+
+			// Reset header borders
+			headers.forEach((headerId) => {
+				const el = document.getElementById(headerId);
+				if (el) {
+					el.classList.remove("border-[#4fd1c5]");
+					el.classList.remove("text-[#4fd1c5]");
+					el.classList.remove("text-[#607B96]");
+
+					el.classList.add("border-transparent");
+					el.classList.add("text-[#607B96]");
+				}
+			});
+
+			// Show selected section
+			const bodyTarget = document.getElementById(id + "_body");
+			if (bodyTarget) bodyTarget.classList.remove("hidden");
+
+			// Highlight selected header
+			const headerTarget = document.getElementById(id + "_header");
+			if (headerTarget) {
+				headerTarget.classList.remove("border-transparent");
+				headerTarget.classList.add("border-[#4fd1c5]");
+				headerTarget.classList.add("text-[#4fd1c5]");
+			}
+
+      const el = document.querySelector("nav");
+			if (el && !el.classList.contains("hidden")) {
+				el.classList.add("hidden");
+			}
+		}
+
+    document.querySelectorAll(".track-click").forEach((el) => {
+      el.addEventListener("click", function () {
+        gtag("event", "div_click", {
+          event_category: "interaction",
+          event_label: el.dataset.name
+        });
+      });
+    });
+
+	</script>
+</html>

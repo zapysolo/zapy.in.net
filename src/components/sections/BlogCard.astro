@@ -1,0 +1,39 @@
+---
+import { formatDate } from '@/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  tags: string[];
+  slug: string;
+  readingTime: number;
+}
+
+const { title, description, date, tags, slug, readingTime } = Astro.props;
+---
+
+<article class="bg-vs-bg-card rounded-lg p-5 sm:p-6 hover:bg-vs-bg-card-hover transition-colors duration-200 border border-vs-border">
+  <header class="mb-3">
+    <div class="flex flex-wrap gap-2 mb-2">
+      {
+        tags.map((tag) => (
+          <span class="text-xs bg-vs-bg-hover text-vs-accent px-2 py-0.5 rounded font-mono">
+            #{tag}
+          </span>
+        ))
+      }
+    </div>
+
+    <h2 class="text-white text-lg font-mono hover:text-vs-accent transition-colors">
+      <a href={`/blog/${slug}`}>{title}</a>
+    </h2>
+  </header>
+
+  <p class="text-vs-text text-sm mb-4 line-clamp-2">{description}</p>
+
+  <footer class="flex items-center justify-between text-xs text-vs-text font-mono">
+    <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    <span>{readingTime} min read</span>
+  </footer>
+</article>
