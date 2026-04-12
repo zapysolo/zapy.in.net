@@ -8,7 +8,7 @@ export const socials: Social[] = [
   },
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/zapy',
+    url: 'https://www.linkedin.com/in/nikhilpatil8217',
     trackingName: 'linkedin-link-click',
   },
 ];

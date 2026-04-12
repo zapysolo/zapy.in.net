@@ -16,6 +16,6 @@ export const OWNER_PHONE = '+91 7774072857';
 export const NAV_ITEMS: NavItem[] = [
   { label: '_hello', href: '/#home', section: 'home' },
   { label: '_about-me', href: '/#about', section: 'about' },
-  { label: '_projects', href: '/projects', section: 'projects' },
   { label: '_contact-me', href: '/#contact', section: 'contact' },
+  { label: '_projects', href: '/projects', section: 'projects' },
 ];

@@ -1,39 +1,29 @@
 ---
-title: Fefifo - Agro Management Platform
-description: Full Stack Agro project with inventory management and real-time updates
-tech: ['Node.js', 'Express', 'MongoDB', 'React']
-github: https://github.com/nikpatil2123/product-inventory-api
+title: Fefifo - Agri-Tech Offline-First Platform
+description: 30-module offline-first agri-tech platform for field workers with low/no connectivity
+tech: ['Koa.js', 'ArangoDB', 'PouchDB', 'CouchDB', 'React Native', 'React', 'Ant Design', 'MongoDB', 'AWS', 'Microservices']
 featured: true
-date: 2023-01-15
+date: 2021-06-01
 image: /images/projects/fefifo.png
 ---
 
 ## Overview
 
-Fefifo is a comprehensive agro-management platform designed to help farmers and agricultural businesses track their inventory, manage resources, and make data-driven decisions.
+Fefifo is a large-scale agri-tech platform built for farmers and field workers to manage harvest cycles, crops, worker operations, and farm data — even in areas with little to no internet connectivity.
 
-### Key Features
+## Key Features
 
-- **Inventory Management**: Real-time tracking of agricultural products
-- **Resource Allocation**: Optimize resource distribution across farms
-- **Analytics Dashboard**: Visualize trends and make informed decisions
-- **Mobile Responsive**: Access from any device
+- **Offline-First Mobile App**: React Native (Expo) app with PouchDB/CouchDB sync for seamless offline operation
+- **30+ Modules**: Harvest tracking, per-crop management, worker salary, notifications, and more
+- **Backoffice**: React + Ant Design admin panel for operators, admins, and worker management
+- **Microservices Backend**: Koa.js services with ArangoDB for complex relational agri-data
+- **Private npm Package**: Shared code library across backend and mobile for consistency
 
-### Technical Details
+## Technical Details
 
-Built with a modern MERN stack, Fefifo provides:
-- Robust API with Node.js and Express
-- Scalable database with MongoDB
-- Interactive frontend with React
-- RESTful architecture for easy integration
-
-### Impact
-
-This project helped reduce inventory management time by 40% and improved resource allocation efficiency by 25%.
-
-### Learning Outcomes
-
-- Full stack web development
-- Database design and optimization
-- Real-time data updates
-- Production deployment and monitoring
+- Built and maintained Koa.js backend APIs across 30+ modules
+- Designed ArangoDB schemas for new modules as requirements evolved
+- Maintained a private npm package — versioning, publishing, and EC2 deployment
+- PouchDB ↔ CouchDB sync architecture for offline data consistency
+- MongoDB used for logs; AWS EC2 + S3 for hosting and file storage
+- Daily client-facing standups with direct requirement clarification

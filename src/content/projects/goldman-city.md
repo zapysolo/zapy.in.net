@@ -1,43 +1,26 @@
 ---
-title: Goldman City - Email & WhatsApp Notifier
-description: Automated notification system for Gmail and WhatsApp
-tech: ['Node.js', 'Gmail API', 'WhatsApp API', 'Express']
-github: https://github.com/nikpatil2123/gmail-whatsapp-notifier
+title: Goldman City - Gold Loan Management App
+description: Full-stack gold loan management platform with React backoffice and Flutter mobile app
+tech: ['Node.js', 'Express', 'PostgreSQL', 'React', 'Flutter', 'Redis']
 featured: false
-date: 2023-03-10
+date: 2024-01-01
 image: /images/projects/goldman-city.png
 ---
 
 ## Overview
 
-Goldman City is an intelligent automation tool that monitors your Gmail inbox and sends customized notifications via WhatsApp, keeping you updated without constant email checking.
+Goldman City is a gold loan management platform with a web backoffice for administrators and a Flutter mobile app for customers.
 
-### Key Features
+## Key Features
 
-- **Gmail Integration**: Seamless Gmail API integration
-- **Smart Filtering**: Customizable rules and filters
-- **WhatsApp Notifications**: Instant alerts to your phone
-- **Multi-account Support**: Handle multiple Gmail accounts
-- **Scheduling**: Set notification preferences by time
+- **Loan Management**: End-to-end gold loan tracking and administration
+- **React Backoffice**: Full admin panel for managing loans, users, and operations
+- **Flutter Mobile App**: Customer-facing mobile application on Android
+- **Redis Caching**: Performance optimisation for frequently accessed data
 
-### Architecture
+## Technical Details
 
-- Node.js backend for server operations
-- Gmail API for email monitoring
-- WhatsApp Business API for notifications
-- Express.js for REST endpoints
-- MongoDB for configuration storage
-
-### Use Cases
-
-- Critical email alerts for businesses
-- Important notification filtering
-- Automated customer support responses
-- Integration with existing workflows
-
-### Technical Challenges Solved
-
-- OAuth2 authentication for Gmail
-- API rate limiting handling
-- Message queue implementation
-- Error recovery mechanisms
+- Led backend development and built the React admin panel as primary engineer
+- Worked on Flutter mobile app alongside an intern
+- Handled Google Play Store deployment and served as code reviewer
+- PostgreSQL for relational data; Redis for caching

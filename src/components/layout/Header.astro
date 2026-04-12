@@ -47,9 +47,7 @@ const isHome = currentPath === '/';
               'nav-link px-6 py-4 border-b-2 transition-all duration-200 hover:text-vs-accent font-mono text-sm',
               !isHome && currentPath.startsWith('/blog') && item.section === 'blog'
                 ? 'text-vs-accent border-vs-accent'
-                : isHome && item.section === 'home'
-                  ? 'text-vs-accent border-vs-accent'
-                  : 'text-vs-text border-transparent hover:bg-vs-bg-hover',
+                : 'text-vs-text border-transparent hover:bg-vs-bg-hover',
             ]}
           >
             {item.label}

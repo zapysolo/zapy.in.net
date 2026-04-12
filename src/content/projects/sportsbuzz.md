@@ -1,40 +1,26 @@
 ---
-title: Sportsbuzz - Sports Entertainment Platform
-description: Live Sports Entertainment News and Score Updates
-tech: ['React', 'Next.js', 'REST API', 'Socket.io']
-github: https://github.com/nikpatil2123/MERN-CRUD
+title: SportsBuzz - Live Sports Scoring Platform
+description: Real-time horizontally scalable sports score platform with WebSocket and Redis Pub/Sub
+tech: ['Node.js', 'Express', 'Socket.io', 'Redis', 'MongoDB', 'AWS']
 featured: true
-date: 2023-02-20
+date: 2022-10-01
 image: /images/projects/sportsbuzz.png
 ---
 
 ## Overview
 
-Sportsbuzz is a real-time sports entertainment platform that delivers live scores, game updates, and sports news to passionate sports fans worldwide.
+SportsBuzz is a real-time sports scoring platform delivering live score updates to thousands of concurrent users during sporting events.
 
-### Key Features
+## Key Features
 
-- **Live Score Updates**: Real-time game and match scores
-- **News Feed**: Latest sports news and analysis
-- **Player Statistics**: Comprehensive player and team stats
-- **User Profiles**: Personalized sports experience
+- **Real-Time Updates**: WebSocket architecture using Socket.io for live score delivery
+- **Horizontally Scalable**: Redis Pub/Sub enables scaling across multiple server instances
+- **High Concurrency**: System architected to handle up to 1M concurrent users
+- **AWS Hosted**: Deployed and monitored on AWS infrastructure
 
-### Technical Implementation
+## Technical Details
 
-- Next.js for server-side rendering and performance
-- React for interactive UI components
-- Socket.io for real-time updates
-- REST API for data management
-
-### Results
-
-- Successfully launched with 50,000+ active users
-- Average 2-second update latency
-- 95% uptime guarantee
-
-### Technologies Learned
-
-- Real-time web applications
-- Performance optimization techniques
-- Scalable API design
-- WebSocket communication
+- Co-designed and implemented Redis Pub/Sub architecture for event-driven score broadcasting
+- Built Express + Node.js backend with Socket.io for persistent client connections
+- MongoDB for data storage; AWS for hosting and scaling
+- Mentored 2 junior engineers — assigned scoped tasks and reviewed contributions

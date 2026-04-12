@@ -1,44 +1,26 @@
 ---
-title: Protopak - Nike Store Clone
-description: E-commerce platform inspired by Nike store design
-tech: ['React', 'Tailwind CSS', 'JavaScript', 'Context API']
-github: https://github.com/nikpatil2123/Nike_CLone
+title: Protopak - 3D Packaging Customizer
+description: Solo end-to-end project — 3D packaging editor with full order and delivery management
+tech: ['Next.js', 'Tailwind CSS', 'Express', 'PostgreSQL', 'Pacdora API']
 featured: false
-date: 2023-04-05
+date: 2024-06-01
 image: /images/projects/protopak.png
 ---
 
 ## Overview
 
-Protopak is a full-featured e-commerce platform that recreates the Nike store experience with modern design patterns and smooth user interactions.
+Protopak is a packaging customization platform where users can design their own packaging in 3D, place orders, and track delivery — all in one place.
 
-### Key Features
+## Key Features
 
-- **Product Catalog**: Browse and filter products
-- **Shopping Cart**: Add to cart and manage items
-- **Checkout Process**: Smooth payment integration
-- **Product Details**: High-quality product information
-- **Responsive Design**: Works on all devices
+- **3D Packaging Editor**: Integrated Pacdora API for in-browser 3D packaging customisation
+- **Order Management**: Full order lifecycle from customisation to delivery
+- **User Management**: Customer accounts and order history
+- **Solo Project**: Designed, built, and deployed end-to-end independently
 
-### Design Highlights
+## Technical Details
 
-- Clean and modern UI inspired by Nike
-- Smooth animations and transitions
-- Intuitive navigation
-- Mobile-first responsive design
-- Accessibility compliance
-
-### Technologies Used
-
-- React for component-based UI
-- Tailwind CSS for styling
-- Context API for state management
-- LocalStorage for cart persistence
-
-### Lessons Learned
-
-- E-commerce best practices
-- UI/UX design principles
-- State management in React
-- Performance optimization
-- Mobile usability
+- Integrated Pacdora API for 3D packaging editor functionality
+- Built full backoffice in Next.js + Tailwind covering products, orders, delivery, and users
+- Express + PostgreSQL backend with clean relational schema
+- Sole engineer responsible for all decisions and delivery
