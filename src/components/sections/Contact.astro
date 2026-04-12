@@ -7,44 +7,79 @@ import { OWNER_EMAIL, OWNER_PHONE, OWNER_LOCATION } from '@/constants';
   class="w-full h-full flex items-center justify-center px-4 md:px-6 lg:px-8 py-8"
   aria-labelledby="contact-heading"
 >
-  <div class="max-w-2xl w-full">
+  <div class="max-w-4xl w-full">
     <h2 id="contact-heading" class="sr-only">Contact</h2>
 
-    <div class="bg-vs-bg p-4 sm:p-6 rounded-lg font-mono text-sm sm:text-base border border-vs-border">
-      <div class="space-y-1">
-        <p class="text-gray-400">/**</p>
-        <p class="text-gray-400">* Contact Information</p>
-        <p class="text-vs-accent">* Let's work together!</p>
-        <p class="text-gray-400">*/</p>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-3xl md:text-4xl font-mono text-white mb-2">_contact-me</h3>
+        <p class="text-vs-accent text-lg md:text-xl font-mono">
+          &gt; Let's work together!
+        </p>
+      </div>
 
-        <div class="mt-6 space-y-1">
+      <div class="space-y-5 font-mono text-sm md:text-base">
+        <div>
+          <p class="text-gray-500 text-sm">// send me an email</p>
           <p>
             <span class="text-vs-purple">const</span>{' '}
-            <span class="text-vs-blue">contactInfo</span> = {'{'}
-          </p>
-
-          <p class="ml-4">
-            <span class="text-vs-purple">email:</span>{' '}
+            <span class="text-vs-blue">email</span> ={' '}
             <a
               href={`mailto:${OWNER_EMAIL}`}
               class="text-vs-green hover:underline break-all"
               data-track="email-click"
-            >"{OWNER_EMAIL}"</a>,
+            >"{OWNER_EMAIL}"</a>;
           </p>
+        </div>
 
-          <p class="ml-4">
-            <span class="text-vs-purple">phone:</span>{' '}
-            <a href={`tel:${OWNER_PHONE.replace(/\s/g, '')}`} class="text-vs-green hover:underline">
-              "{OWNER_PHONE}"
-            </a>,
+        <div>
+          <p class="text-gray-500 text-sm">// or call me</p>
+          <p>
+            <span class="text-vs-purple">const</span>{' '}
+            <span class="text-vs-blue">phone</span> ={' '}
+            <a
+              href={`tel:${OWNER_PHONE.replace(/\s/g, '')}`}
+              class="text-vs-green hover:underline"
+              data-track="phone-click"
+            >"{OWNER_PHONE}"</a>;
           </p>
+        </div>
 
-          <p class="ml-4">
-            <span class="text-vs-purple">location:</span>{' '}
-            <span class="text-vs-green">"{OWNER_LOCATION}"</span>,
+        <div>
+          <p class="text-gray-500 text-sm">// based in</p>
+          <p>
+            <span class="text-vs-purple">const</span>{' '}
+            <span class="text-vs-blue">location</span> ={' '}
+            <span class="text-vs-green">"{OWNER_LOCATION}"</span>;
           </p>
+        </div>
 
-          <p>{'}'}</p>
+        <div>
+          <p class="text-gray-500 text-sm">// connect on social</p>
+          <p>
+            <span class="text-vs-purple">const</span>{' '}
+            <span class="text-vs-blue">socials</span> = {'{'}
+            <a
+              href="https://github.com/ZapySolo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-vs-green hover:underline"
+              data-track="github-link-click"
+            >
+              github
+            </a>
+            ,
+            <a
+              href="https://www.linkedin.com/in/zapy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-vs-green hover:underline"
+              data-track="linkedin-link-click"
+            >
+              linkedin
+            </a>
+            {'}'};
+          </p>
         </div>
       </div>
     </div>

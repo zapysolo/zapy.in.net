@@ -1,26 +1,42 @@
 ---
 import ProjectLayout from '@/layouts/ProjectLayout.astro';
-import { getCollection } from 'astro:content';
+import { projects } from '@/data/projects';
 
-export async function getStaticPaths() {
-  const projects = await getCollection('projects');
+export function getStaticPaths() {
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
   }));
 }
 
+interface Props {
+  project: typeof projects[0];
+}
+
 const { project } = Astro.props;
-const { Content } = await project.render();
 ---
 
 <ProjectLayout
-  title={project.data.title}
-  description={project.data.description}
-  tech={project.data.tech}
-  github={project.data.github}
-  live={project.data.live}
-  ogImage={project.data.image}
+  title={project.title}
+  description={project.description}
+  tech={project.tech}
+  github={project.github}
+  live={project.live}
+  ogImage={project.image}
 >
-  <Content />
+  <div class="prose-vs">
+    <h2>{project.title}</h2>
+    <p>{project.description}</p>
+    
+    <h3>Technologies</h3>
+    <ul>
+      {project.tech.map(tech => <li>{tech}</li>)}
+    </ul>
+
+    {project.github && (
+      <p>
+        <strong>GitHub:</strong> <a href={project.github} target="_blank">{project.github}</a>
+      </p>
+    )}
+  </div>
 </ProjectLayout>

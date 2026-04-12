@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Sidebar from '@/components/layout/Sidebar.astro';
+import Footer from '@/components/layout/Footer.astro';
+import ProjectCard from '@/components/sections/ProjectCard.astro';
+import { projects } from '@/data/projects';
+import { SITE_TITLE } from '@/constants';
+---
+
+<BaseLayout
+  title={`Projects | ${SITE_TITLE}`}
+  description="Explore my portfolio of projects and technical work."
+>
+  <Header />
+
+  <div class="flex flex-col md:flex-row flex-1 pt-[60px] pb-[80px] min-h-screen">
+    <Sidebar />
+
+    <main class="flex-1 overflow-y-auto px-4 md:px-6 lg:px-8 py-12">
+      <div class="max-w-7xl mx-auto">
+        <header class="mb-12">
+          <h1 class="text-3xl md:text-4xl font-mono text-white mb-3">_projects</h1>
+          <p class="text-vs-text">
+            A collection of my work and projects built with modern technologies.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <Footer />
+</BaseLayout>

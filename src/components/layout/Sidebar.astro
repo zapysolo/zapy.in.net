@@ -1,11 +1,10 @@
 ---
 import { projects } from '@/data/projects';
-import { getCollection } from 'astro:content';
+import { blogPosts } from '@/data/blog';
 
-const blogPosts = await getCollection('blog', ({ data }: any) => !data.draft);
-const sortedBlogs = blogPosts.sort(
-  (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf(),
-).slice(0, 10); // Show latest 10 blog posts
+const sortedBlogs = blogPosts
+  .sort((a, b) => b.date.valueOf() - a.date.valueOf())
+  .slice(0, 10);
 ---
 
 <aside
@@ -83,17 +82,17 @@ const sortedBlogs = blogPosts.sort(
 
       <ul class="ml-4 mt-2 space-y-1" role="list">
         {
-          sortedBlogs.map((post: any) => (
+          sortedBlogs.map((post) => (
             <li>
               <a
                 href={`/blog/${post.slug}`}
                 class="flex items-center p-2 rounded hover:text-vs-accent transition-colors text-sm font-mono text-vs-text hover:text-vs-accent"
-                title={post.data.description}
+                title={post.description}
               >
                 <span class="mr-2 text-vs-blue" aria-hidden="true">
                   📝
                 </span>
-                <span class="truncate">{post.data.title}</span>
+                <span class="truncate">{post.title}</span>
               </a>
             </li>
           ))

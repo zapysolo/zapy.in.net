@@ -9,66 +9,74 @@ const INACTIVE_ICON =
 const codeLines = [
   { num: 1, content: '/**', type: 'comment' },
   { num: 2, content: '* About Nikhil Patil', type: 'heading' },
-  { num: 3, content: '* Welcome to my portfolio!', type: 'teal' },
-  { num: 4, content: '*', type: 'comment' },
-  { num: 5, content: '* Bachelors in Engineering CS', type: 'teal-highlight' },
-  { num: 6, content: '* Currently pursuing Masters in AI', type: 'teal-highlight' },
-  { num: 7, content: '*/', type: 'comment' },
+  { num: 3, content: '* Full Stack Backend Engineer', type: 'teal' },
+  { num: 4, content: '*/', type: 'comment' },
+  { num: 5, content: '', type: 'empty' },
+  { num: 6, content: 'const specialization = {', type: 'code' },
+  { num: 7, content: '  focus: "Backend & Backoffice Systems",', type: 'property' },
+  { num: 8, content: '  expertise: [', type: 'property' },
+  { num: 9, content: '    "Scalable Architecture",', type: 'string' },
+  { num: 10, content: '    "System Design",', type: 'string' },
+  { num: 11, content: '    "API Development",', type: 'string' },
+  { num: 12, content: '    "Database Optimization",', type: 'string' },
+  { num: 13, content: '    "Microservices"', type: 'string' },
+  { num: 14, content: '  ],', type: 'property' },
+  { num: 15, content: '  education: {', type: 'property' },
+  { num: 16, content: '    bachelors: "Engineering - CS",', type: 'property' },
+  { num: 17, content: '    masters: "Masters in AI (In Progress)"', type: 'property' },
+  { num: 18, content: '  }', type: 'property' },
+  { num: 19, content: '}', type: 'code' },
 ];
 ---
 
 <section
   id="about"
-  class="w-full h-full flex items-center justify-center px-4 md:px-6 lg:px-8 py-8"
+  class="w-full h-full flex items-center justify-center px-4 md:px-6 lg:px-8 py-4"
   aria-labelledby="about-heading"
 >
-  <div class="max-w-7xl w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-4 sm:gap-8">
+  <div class="max-w-7xl w-full h-full flex flex-col">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4 h-full">
 
       <!-- Code editor card -->
-      <div class="bg-vs-bg-card rounded-lg shadow-xl overflow-hidden">
+      <div class="bg-vs-bg-card rounded-lg shadow-xl overflow-hidden flex flex-col h-full">
         <div class="bg-vs-bg-card-hover p-2 flex items-center" aria-hidden="true">
           <div class="flex space-x-2">
             <div class="w-3 h-3 rounded-full bg-red-500"></div>
             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div class="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <span class="ml-4 text-gray-400 text-sm font-mono">AboutMe.tsx</span>
+          <span class="ml-4 text-gray-400 text-sm font-mono">about.ts</span>
         </div>
 
-        <div class="p-4 sm:p-6 font-mono text-xs sm:text-sm max-h-96 overflow-y-auto" role="region" aria-label="About me">
+        <div class="flex-1 overflow-y-auto font-mono text-xs sm:text-sm p-4 sm:p-6" role="region" aria-label="About me">
           <h2 id="about-heading" class="sr-only">About Me</h2>
           {
             codeLines.map((line) => (
-              <div class="flex group hover:bg-vs-bg-card-hover transition-colors duration-150">
+              <div class="flex group hover:bg-vs-bg-card-hover transition-colors duration-150 py-0.5">
                 <span class="flex-shrink-0 w-8 text-gray-500 opacity-50 select-none">
                   {line.num}
                 </span>
-                <div class="flex-1 min-w-0 py-0.5">
+                <div class="flex-1 min-w-0">
                   {line.type === 'comment' && (
                     <span class="text-gray-400">{line.content}</span>
                   )}
                   {line.type === 'heading' && (
-                    <span>
-                      <span class="text-vs-teal">* </span>
-                      <span class="text-xl sm:text-3xl font-semibold tracking-tight text-white">
-                        About Nikhil Patil
-                      </span>
-                    </span>
+                    <span class="text-vs-green">{line.content}</span>
+                  )}
+                  {line.type === 'empty' && (
+                    <span></span>
+                  )}
+                  {line.type === 'code' && (
+                    <span class="text-vs-purple">{line.content}</span>
+                  )}
+                  {line.type === 'property' && (
+                    <span class="text-vs-blue">{line.content}</span>
+                  )}
+                  {line.type === 'string' && (
+                    <span class="text-vs-green ml-2">{line.content}</span>
                   )}
                   {line.type === 'teal' && (
                     <span class="text-vs-teal">{line.content}</span>
-                  )}
-                  {line.type === 'teal-highlight' && (
-                    <span class="text-vs-teal">
-                      {line.content.split(/(CS|Masters in AI)/g).map((part) =>
-                        part === 'CS' || part === 'Masters in AI' ? (
-                          <span class="text-[#A9D6E5] font-bold">{part}</span>
-                        ) : (
-                          part
-                        ),
-                      )}
-                    </span>
                   )}
                 </div>
               </div>
@@ -78,33 +86,33 @@ const codeLines = [
       </div>
 
       <!-- Skills panel -->
-      <div class="space-y-4 sm:space-y-6 max-h-96 overflow-y-auto">
+      <div class="space-y-3 overflow-y-auto pr-2">
         {
           skillCategories.map((category) => (
-            <div class="bg-vs-bg-card p-3 sm:p-6 rounded-lg shadow-xl">
-              <p class="text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm font-mono border-b border-gray-700 pb-2">
+            <div class="bg-vs-bg-card p-3 rounded-lg shadow-xl">
+              <p class="text-gray-400 mb-2 text-xs font-mono border-b border-gray-700 pb-2">
                 {category.label}
               </p>
-              <ul class="grid grid-cols-1 xs:grid-cols-2 gap-1 sm:gap-2" role="list">
+              <ul class="grid grid-cols-1 gap-1 text-xs" role="list">
                 {category.skills.map((skill) => (
-                  <li class="flex items-center p-1.5 sm:p-2 hover:bg-vs-bg-card-hover rounded transition-colors duration-200">
+                  <li class="flex items-center p-1.5 hover:bg-vs-bg-card-hover rounded transition-colors duration-200">
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
                       stroke-width="0"
                       viewBox="0 0 448 512"
                       class:list={[
-                        'min-w-[14px] sm:min-w-[16px] mr-2 shrink-0',
+                        'min-w-[12px] mr-1.5 shrink-0',
                         skill.active ? 'text-vs-teal' : 'text-gray-600',
                       ]}
-                      height="1em"
-                      width="1em"
+                      height="0.8em"
+                      width="0.8em"
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
                     >
                       <path d={skill.active ? ACTIVE_ICON : INACTIVE_ICON} />
                     </svg>
-                    <span class="text-gray-200 text-xs sm:text-sm">{skill.name}</span>
+                    <span class="text-gray-200">{skill.name}</span>
                   </li>
                 ))}
               </ul>
