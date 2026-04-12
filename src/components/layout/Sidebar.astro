@@ -1,12 +1,19 @@
 ---
 import { projects } from '@/data/projects';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog', ({ data }: any) => !data.draft);
+const sortedBlogs = blogPosts.sort(
+  (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf(),
+).slice(0, 10); // Show latest 10 blog posts
 ---
 
 <aside
   class="hidden md:flex flex-col w-64 lg:w-72 xl:w-80 bg-vs-bg border-r border-vs-border overflow-y-auto shrink-0"
-  aria-label="Project navigation"
+  aria-label="Sidebar navigation"
 >
-  <div class="p-4">
+  <!-- Projects Section -->
+  <div class="p-4 border-b border-vs-border">
     <details open>
       <summary
         class="flex items-center cursor-pointer hover:text-vs-accent transition-colors p-2 rounded font-mono text-sm select-none list-none"
@@ -26,7 +33,7 @@ import { projects } from '@/data/projects';
             d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
           ></path>
         </svg>
-        <span>projects</span>
+        <span>_projects</span>
       </summary>
 
       <ul class="ml-4 mt-2 space-y-1" role="list">
@@ -35,16 +42,65 @@ import { projects } from '@/data/projects';
             <li>
               <a
                 href={`/projects/${project.slug}`}
-                class="flex items-center p-2 rounded hover:text-vs-accent transition-colors text-sm font-mono"
+                class="flex items-center p-2 rounded hover:text-vs-accent transition-colors text-sm font-mono text-vs-text hover:text-vs-accent"
+                title={project.description}
               >
-                <span class="mr-2" aria-hidden="true">
-                  📁
+                <span class="mr-2 text-vs-green" aria-hidden="true">
+                  📦
                 </span>
-                <span>{project.title}</span>
+                <span class="truncate">{project.title}</span>
               </a>
             </li>
           ))
         }
+      </ul>
+    </details>
+  </div>
+
+  <!-- Blog Section -->
+  <div class="p-4">
+    <details open>
+      <summary
+        class="flex items-center cursor-pointer hover:text-vs-accent transition-colors p-2 rounded font-mono text-sm select-none list-none"
+      >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          class="mr-2 shrink-0"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M128 0c13.255 0 24 10.745 24 24v264c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V24C0 10.745 10.745 0 24 0h104zm384 0c13.255 0 24 10.745 24 24v264c0 13.255-10.745 24-24 24H408c-13.255 0-24-10.745-24-24V24c0-13.255 10.745-24 24-24h104zm-323.5 507.5C89 493 60 461 60 423V96h60v327c0 37.6 3 75.4 11.9 112.5h-57.4zm-108.9 0c8.9-37.1 11.9-74.9 11.9-112.5V96h60v327c0 38-29 70-65.9 79.5zm447-419.5H60v-24c0-26.5 21.5-48 48-48h384c26.5 0 48 21.5 48 48v24z"
+          ></path>
+        </svg>
+        <span>_blog</span>
+      </summary>
+
+      <ul class="ml-4 mt-2 space-y-1" role="list">
+        {
+          sortedBlogs.map((post: any) => (
+            <li>
+              <a
+                href={`/blog/${post.slug}`}
+                class="flex items-center p-2 rounded hover:text-vs-accent transition-colors text-sm font-mono text-vs-text hover:text-vs-accent"
+                title={post.data.description}
+              >
+                <span class="mr-2 text-vs-blue" aria-hidden="true">
+                  📝
+                </span>
+                <span class="truncate">{post.data.title}</span>
+              </a>
+            </li>
+          ))
+        }
+        {sortedBlogs.length === 0 && (
+          <li class="text-gray-500 text-xs italic p-2">No blog posts yet</li>
+        )}
       </ul>
     </details>
   </div>

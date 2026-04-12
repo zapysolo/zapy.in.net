@@ -5,7 +5,6 @@ import Sidebar from '@/components/layout/Sidebar.astro';
 import Footer from '@/components/layout/Footer.astro';
 import Hero from '@/components/sections/Hero.astro';
 import About from '@/components/sections/About.astro';
-import Projects from '@/components/sections/Projects.astro';
 import Contact from '@/components/sections/Contact.astro';
 ---
 
@@ -15,13 +14,71 @@ import Contact from '@/components/sections/Contact.astro';
   <div class="flex flex-col md:flex-row flex-1 pt-[60px] pb-[80px] min-h-screen">
     <Sidebar />
 
-    <main class="flex-1 overflow-y-auto" id="main-content">
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+    <main class="flex-1 overflow-hidden relative" id="main-content">
+      <!-- Hero Section -->
+      <div id="section-home" class="section-container absolute inset-0 opacity-100 transition-opacity duration-300">
+        <Hero />
+      </div>
+
+      <!-- About Section -->
+      <div id="section-about" class="section-container absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
+        <About />
+      </div>
+
+      <!-- Contact Section -->
+      <div id="section-contact" class="section-container absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
+        <Contact />
+      </div>
     </main>
   </div>
 
   <Footer />
 </BaseLayout>
+
+<script>
+  // Tab navigation system
+  const sections = {
+    home: document.getElementById('section-home'),
+    about: document.getElementById('section-about'),
+    contact: document.getElementById('section-contact'),
+  };
+
+  function showSection(sectionName: string) {
+    // Hide all sections
+    Object.values(sections).forEach(section => {
+      if (section) {
+        section.classList.add('opacity-0', 'pointer-events-none');
+        section.classList.remove('opacity-100');
+      }
+    });
+
+    // Show selected section
+    if (sections[sectionName as keyof typeof sections]) {
+      const section = sections[sectionName as keyof typeof sections];
+      if (section) {
+        section.classList.remove('opacity-0', 'pointer-events-none');
+        section.classList.add('opacity-100');
+      }
+    }
+
+    // Update localStorage
+    localStorage.setItem('activeSection', sectionName);
+  }
+
+  // Handle navigation clicks
+  document.querySelectorAll('[data-section]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest('[data-section]');
+      if (target) {
+        const section = target.getAttribute('data-section');
+        if (section && sections[section as keyof typeof sections]) {
+          showSection(section);
+        }
+      }
+    });
+  });
+
+  // Show initial section from localStorage or default to home
+  const activeSection = localStorage.getItem('activeSection') || 'home';
+  showSection(activeSection);
+</script>
