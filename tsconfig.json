@@ -1,6 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "./node_modules/astro/tsconfigs/strict.json",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

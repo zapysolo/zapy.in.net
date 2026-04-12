@@ -1,6 +1,10 @@
-@tailwind base;
+@config "../tailwind.config.js";
+
+@import "tailwindcss";
+
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 @layer base {
   :root {
@@ -24,7 +28,7 @@
   }
 
   body {
-    @apply bg-vs-bg text-vs-text font-sans;
+    @apply bg-[#011627] text-[#607b96] font-sans;
   }
 }
 
@@ -45,8 +49,8 @@
     @apply mb-4;
   }
 
-  .prose-vs a {
-    @apply text-vs-accent hover:underline;
+  a {
+    @apply text-[#4fd1c5] hover:underline;
   }
 
   .prose-vs code {

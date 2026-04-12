@@ -7,9 +7,9 @@ import { getCollection } from 'astro:content';
 import { getReadingTime } from '@/utils';
 import { SITE_TITLE } from '@/constants';
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getCollection('blog', ({ data }: any) => !data.draft);
 const sortedPosts = allPosts.sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
@@ -19,7 +19,7 @@ const sortedPosts = allPosts.sort(
 >
   <Header />
 
-  <main class="max-w-3xl mx-auto px-4 py-12 mt-[60px]">
+  <main class="max-w-3xl mx-auto px-4 py-12 mt-15">
     <header class="mb-10">
       <h1 class="text-3xl md:text-4xl font-mono text-white mb-3">_blog</h1>
       <p class="text-vs-text">
@@ -34,7 +34,7 @@ const sortedPosts = allPosts.sort(
         </p>
       ) : (
         <div class="space-y-4">
-          {sortedPosts.map(async (post) => {
+          {sortedPosts.map(async (post: any) => {
             const { Content } = await post.render();
             const body = post.body ?? '';
             return (
