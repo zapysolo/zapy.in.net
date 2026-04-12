@@ -12,10 +12,10 @@ import Contact from '@/components/sections/Contact.astro';
 <BaseLayout>
   <Header />
 
-  <div class="flex flex-col md:flex-row flex-1 mt-15 min-h-[calc(100vh-60px)]">
+  <div class="flex flex-col md:flex-row flex-1 pt-[60px] pb-[80px] min-h-screen">
     <Sidebar />
 
-    <main class="flex-1 overflow-hidden" id="main-content">
+    <main class="flex-1 overflow-y-auto" id="main-content">
       <Hero />
       <About />
       <Projects />
