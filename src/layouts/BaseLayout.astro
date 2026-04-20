@@ -24,7 +24,11 @@ const ogImageUrl = `${SITE_URL}${ogImage}`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonicalUrl} />
 
     <title>{title}</title>
@@ -38,6 +42,11 @@ const ogImageUrl = `${SITE_URL}${ogImage}`;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Nikhil Patil" />
+
+    <meta name="author" content="Nikhil Patil" />
+    <meta property="og:image:alt" content="Nikhil Patil Portfolio" />
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0f172a" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
