@@ -1,46 +1,35 @@
-# Astro Starter Kit: Basics
+# Nikhil Patil — Portfolio
+
+Portfolio site built with Next.js App Router, React, TypeScript, and Tailwind CSS. The project is configured for a static export and deploys to GitHub Pages.
+
+## Requirements
+
+- Node.js 22.12 or newer
+- npm
+
+## Development
 
 ```sh
-npm create astro@latest -- --template basics
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open [http://localhost:3000](http://localhost:3000).
 
-## 🚀 Project Structure
+## Build and preview
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.ico
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run typecheck
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The static site is generated in `out/`. To preview the static export locally, run `python3 -m http.server 3000 --directory out`.
 
-## 🧞 Commands
+## Routes and content
 
-All commands are run from the root of the project, from a terminal:
+- `/` — home, about, and contact sections
+- `/projects/` — project index and generated project detail pages
+- `/blog/` — blog index and generated blog detail pages
+- `src/data/projects.ts` and `src/data/blog.ts` — project and blog content
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+GitHub Pages deployment is handled by `.github/workflows/static.yml`. The static export includes the custom-domain `CNAME` file from `public/`.

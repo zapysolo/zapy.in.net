@@ -7,7 +7,6 @@ export interface Project {
   github: string;
   live?: string;
   featured: boolean;
-  image: string;
 }
 
 export interface Skill {

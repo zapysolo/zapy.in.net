@@ -9,7 +9,6 @@ export const projects: Project[] = [
     tech: ['Koa.js', 'ArangoDB', 'PouchDB', 'CouchDB', 'React Native', 'React', 'MongoDB', 'AWS'],
     github: '',
     featured: true,
-    image: '/images/projects/fefifo.png',
   },
   {
     title: 'SportsBuzz',
@@ -19,7 +18,6 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Express', 'Socket.io', 'Redis', 'MongoDB', 'AWS'],
     github: '',
     featured: true,
-    image: '/images/projects/sportsbuzz.png',
   },
   {
     title: 'Office Automation',
@@ -29,7 +27,6 @@ export const projects: Project[] = [
     tech: ['Node.js', 'PostgreSQL', 'Knex', 'Puppeteer', 'React', 'Next.js', 'SQS', 'AWS'],
     github: '',
     featured: true,
-    image: '/images/projects/office-automation.png',
   },
   {
     title: 'Protopak',
@@ -39,7 +36,6 @@ export const projects: Project[] = [
     tech: ['Next.js', 'Tailwind CSS', 'Express', 'PostgreSQL', 'Pacdora API'],
     github: '',
     featured: true,
-    image: '/images/projects/protopak.png',
   },
   {
     title: 'Goldman City',
@@ -49,7 +45,6 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Express', 'PostgreSQL', 'React', 'Flutter', 'Redis'],
     github: '',
     featured: false,
-    image: '/images/projects/goldman-city.png',
   },
   {
     title: 'Honor FX',
@@ -59,7 +54,6 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Express', 'PostgreSQL', 'Vue.js'],
     github: '',
     featured: false,
-    image: '/images/projects/honor-fx.png',
   },
   {
     title: 'Warehouse Truck Tracking',
@@ -69,6 +63,5 @@ export const projects: Project[] = [
     tech: ['Node.js', 'PostgreSQL', 'React', 'Tailwind', 'RTSP', 'HLS'],
     github: '',
     featured: false,
-    image: '/images/projects/warehouse-tracking.png',
   },
 ];
