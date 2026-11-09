@@ -64,4 +64,13 @@ export const projects: Project[] = [
     github: '',
     featured: false,
   },
+    {
+    title: 'Hyabit',
+    slug: 'hyabit',
+    number: 8,
+    description: 'Truck booking application with React Native mobile app and React backoffice for managing bookings and payments.',
+    tech: ['Node.js', 'MongoDB', 'React', 'React Native', 'Google Maps API', 'AWS'],
+    github: '',
+    featured: false,
+  },
 ];

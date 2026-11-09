@@ -6,42 +6,42 @@ export const blogPosts = [
     date: new Date('2024-03-01'),
     tags: ['react-native', 'pouchdb', 'couchdb', 'offline-first', 'architecture'],
     content: `
-## The Problem
+      ## The Problem
 
-Field workers on the Fefifo agri-tech platform worked in areas with little to no internet connectivity. A standard REST API-based app would be completely unusable in these conditions.
+      Field workers on the Fefifo agri-tech platform worked in areas with little to no internet connectivity. A standard REST API-based app would be completely unusable in these conditions.
 
-## The Solution: Offline-First Architecture
+      ## The Solution: Offline-First Architecture
 
-Instead of building an app that fails gracefully without internet, we built one that works natively offline and syncs when connectivity is restored.
+      Instead of building an app that fails gracefully without internet, we built one that works natively offline and syncs when connectivity is restored.
 
-### How PouchDB + CouchDB Sync Works
+      ### How PouchDB + CouchDB Sync Works
 
-PouchDB runs inside the React Native app as a local database. CouchDB runs on the server. When connectivity is available, they sync automatically — bidirectionally.
+      PouchDB runs inside the React Native app as a local database. CouchDB runs on the server. When connectivity is available, they sync automatically — bidirectionally.
 
-\`\`\`javascript
-// Initialize local PouchDB instance
-const localDB = new PouchDB('fefifo_local');
+      \`\`\`javascript
+      // Initialize local PouchDB instance
+      const localDB = new PouchDB('fefifo_local');
 
-// Set up sync with remote CouchDB
-const sync = localDB.sync('https://your-couchdb-server/fefifo', {
-  live: true,
-  retry: true
-}).on('change', (info) => {
-  console.log('Sync change:', info);
-}).on('error', (err) => {
-  console.error('Sync error:', err);
-});
-\`\`\`
+      // Set up sync with remote CouchDB
+      const sync = localDB.sync('https://your-couchdb-server/fefifo', {
+        live: true,
+        retry: true
+      }).on('change', (info) => {
+        console.log('Sync change:', info);
+      }).on('error', (err) => {
+        console.error('Sync error:', err);
+      });
+      \`\`\`
 
-### Conflict Resolution
+      ### Conflict Resolution
 
-When the same document is edited offline on two devices, CouchDB creates a conflict. We handled this by always preferring the most recent edit based on timestamp.
+      When the same document is edited offline on two devices, CouchDB creates a conflict. We handled this by always preferring the most recent edit based on timestamp.
 
-## Lessons Learned
+      ## Lessons Learned
 
-- Design your data model for sync from day one — retrofitting is painful
-- Keep documents small and focused — large documents cause slow syncs
-- Always show the user their sync status clearly in the UI
+      - Design your data model for sync from day one — retrofitting is painful
+      - Keep documents small and focused — large documents cause slow syncs
+      - Always show the user their sync status clearly in the UI
     `
   },
   {

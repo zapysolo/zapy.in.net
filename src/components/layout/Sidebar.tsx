@@ -1,11 +1,16 @@
+'use client';
 import { blogPosts } from '@/data/blog';
 import { projects } from '@/data/projects';
+import { useState } from 'react';
 
 const sortedBlogs = [...blogPosts]
   .sort((a, b) => b.date.valueOf() - a.date.valueOf())
   .slice(0, 10);
 
 export default function Sidebar() {
+  const [isOpenProjects, setIsOpen] = useState(true); // Default to open
+  const [isOpenBlog, setIsOpenBlog] = useState(true); // Default to open
+
   return (
     <aside
       className="hidden md:flex flex-col w-64 lg:w-72 xl:w-80 bg-vs-bg border-r border-vs-border overflow-y-auto shrink-0"
@@ -13,8 +18,8 @@ export default function Sidebar() {
     >
       <div className="p-4 border-b border-vs-border">
         <details open>
-          <summary className="flex items-center cursor-pointer hover:text-vs-accent transition-colors p-2 rounded font-mono text-sm select-none list-none">
-            <span className="mr-2" aria-hidden="true">⌄</span>
+          <summary onClick={() => setIsOpen(!isOpenProjects)} className="flex items-center cursor-pointer hover:text-vs-accent transition-colors p-2 rounded font-mono text-sm select-none list-none">
+            <span className="mr-2" aria-hidden="true">{isOpenProjects ? '⌃' : '⌄'}</span>
             <span>_projects</span>
           </summary>
           <ul className="ml-4 mt-2 space-y-1" role="list">
@@ -36,8 +41,8 @@ export default function Sidebar() {
 
       <div className="p-4">
         <details open>
-          <summary className="flex items-center cursor-pointer hover:text-vs-accent transition-colors p-2 rounded font-mono text-sm select-none list-none">
-            <span className="mr-2" aria-hidden="true">⌄</span>
+          <summary onClick={() => setIsOpenBlog(!isOpenBlog)} className="flex items-center cursor-pointer hover:text-vs-accent transition-colors p-2 rounded font-mono text-sm select-none list-none">
+            <span className="mr-2" aria-hidden="true">{isOpenBlog ? '⌃' : '⌄'}</span>
             <span>_blog</span>
           </summary>
           <ul className="ml-4 mt-2 space-y-1" role="list">

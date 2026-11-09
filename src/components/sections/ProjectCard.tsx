@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
         <footer className="flex gap-2 mt-auto">
           <a href={`/projects/${project.slug}/`} className="flex-1 text-center bg-vs-bg-hover text-vs-accent px-4 py-2 text-sm rounded-md hover:bg-[#233141] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-vs-accent font-mono">
-            view-details
+            view
           </a>
           <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-vs-bg-hover text-vs-text px-4 py-2 text-sm rounded-md hover:bg-[#233141] hover:text-vs-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-vs-accent font-mono" aria-label={`View ${project.title} on GitHub`}>
             github
